@@ -24,6 +24,8 @@ export class RegisterComponent implements OnInit {
     return this.registerService.saveUserData(this.saveUser.value);
   }
 
+  // Added comment for barnch testing
+
 
   ngOnInit(): void {
   }
