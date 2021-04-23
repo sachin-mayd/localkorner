@@ -11,8 +11,10 @@ import { WishlistComponent } from './wishlist/wishlist.component';
 import { VerifyotpComponent } from './verifyotp/verifyotp.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailsComponent } from './product-details/product-details.component'
+import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 
 const routes: Routes = [
+  { path: 'shopping_cart', component:ShoppingcartComponent},
   { path: 'product_details', component:ProductDetailsComponent},
   { path: 'product_list', component:ProductListComponent},
   { path: 'verifyotp', component:VerifyotpComponent},

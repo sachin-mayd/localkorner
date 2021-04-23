@@ -19,7 +19,8 @@ import { MyaccountComponent } from './myaccount/myaccount.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { VerifyotpComponent } from './verifyotp/verifyotp.component';
 import { ProductListComponent } from './product-list/product-list.component';
-import { ProductDetailsComponent } from './product-details/product-details.component'
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component'
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     WishlistComponent,
     VerifyotpComponent,
     ProductListComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    ShoppingcartComponent
   ],
   imports: [
     BrowserModule,
