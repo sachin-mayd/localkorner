@@ -25,27 +25,47 @@
                     <div class="row">
                         <div class="form-group col-md-6 ">
                             <label>First Name*</label>
-                            <input type="text" class="form-control" formControlName="fname" placeholder="Your first name">
+                            <input type="text" class="form-control" formControlName="fname" placeholder="Your first name" name="fname">
+                            <div *ngIf="submitted && f.fname.errors">
+                                <div *ngIf="f.fname.errors.required" class="error">First Name is Required</div>
+                            </div>
                         </div>
                         <div class="form-group col-md-6">
                             <label>Last Name*</label>
-                            <input type="text" class="form-control" formControlName="lname"  placeholder="Your Last name">
+                            <input type="text" class="form-control" formControlName="lname"  placeholder="Your Last name" name="lname">
+                            <div *ngIf="submitted && f.lname.errors">
+                                <div *ngIf="f.lname.errors.required" class="error">Last Name is Required</div>
+                            </div>
                         </div>
                         <div class="form-group col-md-6">
                             <label>Email Address*</label>
-                            <input type="text" class="form-control" formControlName="email"  placeholder="Your email address">
+                            <input type="text" class="form-control" formControlName="email"  placeholder="Your email address" name="email">
+                            <div *ngIf="submitted && f.email.errors">
+                                <div *ngIf="f.email.errors.required" class="error">Email is Required</div>
+                            </div>
                         </div>
                         <div class="form-group col-md-6">
                             <label>Phone Number*</label>
-                            <input type="text" class="form-control" formControlName="phone"  placeholder="Your phone number">
+                            <input type="text" class="form-control" formControlName="phone"  placeholder="Your phone number" name="phone">
+                            <div *ngIf="submitted && f.phone.errors">
+                                <div *ngIf="f.phone.errors.required" class="error">Phone no is Required</div>
+                            </div>
                         </div>
                         <div class="form-group col-md-6">
                             <label>Password*</label>
-                            <input type="text" class="form-control" formControlName="password"  placeholder="Password should be more than 6 character">
+                            <input type="text" class="form-control" formControlName="password"  placeholder="Your password" name="password">
+                            <div *ngIf="submitted && f.password.errors">
+                                <div *ngIf="f.password.errors.required" class="error">Password is Required</div>
+                                <div *ngIf="f.password.errors.minlength" class="error">Password Should be Atleast 6 letters</div>
+                            </div>
                         </div>
                         <div class="form-group col-md-6">
                             <label>Confirm Password*</label>
-                            <input type="text" class="form-control" formControlName="cpass"  placeholder="Confirm your password">
+                            <input type="text" class="form-control" formControlName="cpassword"  placeholder="Confirm password" name="cpassword">
+                            <div *ngIf="submitted && f.cpassword.errors">
+                                <div *ngIf="f.cpassword.errors.required" class="error"> Confirm Password is Required</div>
+                                <div *ngIf="f.cpassword.errors.MustMatch" class="error">Confrim Password did not Match</div>
+                            </div>
                         </div>
                         <div class="col-md-12 text-left">
                             <button type="submit">Submit</button>
