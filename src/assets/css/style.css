@@ -4794,7 +4794,7 @@ input:focus, textarea:focus {
 ======================================= */
 .breadcrumb-area {
   background: #ff9800;
-  padding: 35px 0;
+  padding: 10px 0;
 }
 
 .breadcrumb-area .breadcrumb-box ul li {

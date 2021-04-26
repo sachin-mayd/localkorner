@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class RegisterService {
-  url ="http://bangelwali.com/localkornerbackend/apis/register"
+  url ="http://localhost/localKorner/localkornerbackend/apis/register"
   constructor(private http:HttpClient) { }
   saveUserData(data:any){
     let rdta = this.http.post(this.url,data).subscribe((res) => {

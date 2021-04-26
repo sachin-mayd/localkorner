@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RegisterService } from '../service/register.service';
-import { FormControl,FormGroup } from '@angular/forms'
+import { FormControl,FormGroup,Validators,FormBuilder} from '@angular/forms'
 
 @Component({
   selector: 'app-register',
@@ -8,21 +8,51 @@ import { FormControl,FormGroup } from '@angular/forms'
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  saveUser = new FormGroup({
-    fname : new FormControl(''),
-    lname : new FormControl(''),
-    email : new FormControl(''),
-    phone : new FormControl(''),
-    password : new FormControl(''),
-    cpass : new FormControl('')
-    });
+  
+  saveUser:FormGroup;
+  submitted:boolean = false;
 
-  constructor(private registerService:RegisterService) { }
+  constructor(private registerService:RegisterService,private formbuilder:FormBuilder) { 
+    this.saveUser = this.formbuilder.group({
+      fname: new FormControl(null,[Validators.required]),
+      lname: new FormControl(null,[Validators.required]),
+      email: new FormControl(null,[Validators.required]),
+      phone: new FormControl(null,[Validators.required]),
+      password: new FormControl(null,[Validators.required,Validators.minLength(6)]),
+      cpassword: new FormControl(null,[Validators.required])
+
+    },{
+      validators: this.MustMatch('password', 'cpassword')
+    })
+  }
+
+  get f (){return this.saveUser.controls}
+
+  MustMatch(controlName: string, matchingcontrolName:string){
+   return(formGroup:FormGroup)=>{
+     const control =formGroup.controls[controlName];
+     const matchingcontrol =formGroup.controls[matchingcontrolName];
+     if(matchingcontrol.errors && !matchingcontrol.errors.MustMatch){
+        return
+     }
+     if(control.value !== matchingcontrol.value){
+       matchingcontrol.setErrors({MustMatch:true});
+     }
+     else{
+       matchingcontrol.setErrors(null);
+     }
+   }
+  }
   addUser()
   {
-    
+    this.submitted = true;
+    if(this.saveUser.invalid){
+       return;
+    }
     return this.registerService.saveUserData(this.saveUser.value);
   }
+
+  // Added comment for barnch testing
 
 
   ngOnInit(): void {

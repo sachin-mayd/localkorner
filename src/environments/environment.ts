@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  base_url:'http://bangelwali.com/localkornerbackend/apis/'
+  base_url:'http://localhost/localKorner/localkornerbackend/apis/'
 };
 
 /*
