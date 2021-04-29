@@ -2318,7 +2318,6 @@ input:focus, textarea:focus {
   display: block;
   font-size: 15px;
   padding: 8px 20px;
-  border-bottom: 1px solid #eeeeee;
 }
 
 .slider-area .menu-widget ul li a:hover {
