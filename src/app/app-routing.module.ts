@@ -17,6 +17,8 @@ const routes: Routes = [
   { path: 'shopping_cart', component:ShoppingcartComponent},
   { path: 'product_details', component:ProductDetailsComponent},
   { path: 'product_list', component:ProductListComponent},
+  { path: 'product_list/bestseller', component:ProductListComponent},
+  { path: 'product_list/todaydeal', component:ProductListComponent},
   { path: 'verifyotp', component:VerifyotpComponent},
   { path: 'wishlist', component:WishlistComponent},
   { path: 'myaccount', component:MyaccountComponent},

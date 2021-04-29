@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  base_url:'http://localhost/localKorner/localkornerbackend/apis/'
+  base_url:'http://192.168.1.52:8080/localKorner/localkornerbackend/apis/'
 };
 
 /*
