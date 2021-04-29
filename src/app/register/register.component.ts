@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit {
 
   constructor(private registerService:RegisterService,private formbuilder:FormBuilder) { 
     this.saveUser = this.formbuilder.group({
-      fname: new FormControl(null,[Validators.required]),
+      fname: new FormControl(null,[Validators.required]),                                                                                            
       lname: new FormControl(null,[Validators.required]),
       email: new FormControl(null,[Validators.required]),
       phone: new FormControl(null,[Validators.required]),
