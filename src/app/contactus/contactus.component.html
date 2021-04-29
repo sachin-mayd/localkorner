@@ -76,19 +76,19 @@
             <div class="col-lg-8 col-md-7">
                 <div class="contact-form">
                     <h4>Get In Touch</h4>
-                    <form action="#">
+                    <form #contactPost="ngForm" (ngSubmit)="onSubmit(contactPost.value)">
                         <div class="row">
                             <div class="col-md-6">
-                                <p><input type="text" id="name" name="name" placeholder="Full Name" required=""></p>
+                                <p><input type="text" id="name" name="name" placeholder="Full Name" required="" ngModel></p>
                              </div>
                             <div class="col-md-6">
-                                <p><input type="text" id="email" name="email" placeholder="Email" required=""></p>
+                                <p><input type="text" id="email" name="email" placeholder="Email" required="" ngModel></p>
                             </div>
                             <div class="col-md-12">
-                                <p><input type="text" id="subject" name="subject" placeholder="Subject"></p>
+                                <p><input type="text" id="subject" name="subject" placeholder="Subject" ngModel></p>
                             </div>
                             <div class="col-md-12">
-                                <p><textarea name="message" id="message" placeholder="Message" required=""></textarea></p>
+                                <p><textarea name="message" id="message" placeholder="Message" required="" ngModel></textarea></p>
                             </div>
                             <div class="col-md-12">
                                 <button type="submit">Send Message</button>
